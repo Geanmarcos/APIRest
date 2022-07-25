@@ -1,0 +1,513 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2022-07-25T00:33:52.528Z",
+        "line": 5,
+        "name": "Listar todos los usuarios",
+        "description": "",
+        "id": "pruebas-al-servicio-usuarios;listar-todos-los-usuarios",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 973317800,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "listar usuarios",
+            "match": {
+              "location": "definitions.ServicioUsuarioDefinition.listarUsuarios()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 12004300,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "mostrar el listado de usuarios",
+            "match": {
+              "location": "definitions.ServicioUsuarioDefinition.mostrarElListadoDeUsuarios()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1000100,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "validar codigo de respuesta \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"200\"",
+                  "offset": 28
+                }
+              ],
+              "location": "definitions.ServicioUsuarioDefinition.validarCodigoDeRespuesta(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 323072600,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "validar numero de registros",
+            "match": {
+              "location": "definitions.ServicioUsuarioDefinition.validarNumeroDeRegistros()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@todoslosservicios"
+          },
+          {
+            "name": "@metodoget"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2022-07-25T00:33:53.886Z",
+        "line": 11,
+        "name": "Mostrar Usuario",
+        "description": "",
+        "id": "pruebas-al-servicio-usuarios;mostrar-usuario",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 70029500,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "listar usuario con id \"3\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"3\"",
+                  "offset": 22
+                }
+              ],
+              "location": "definitions.ServicioUsuarioDefinition.listarUsuarioConId(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1000100,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "mostrar informacion del usuario",
+            "match": {
+              "location": "definitions.ServicioUsuarioDefinition.mostrarInformacionDelUsuario()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "validar codigo de respuesta \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"200\"",
+                  "offset": 28
+                }
+              ],
+              "location": "definitions.ServicioUsuarioDefinition.validarCodigoDeRespuesta(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 28005600,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "validar informacion de la consulta",
+            "match": {
+              "location": "definitions.ServicioUsuarioDefinition.validarInformacionDeLaConsulta(io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "email",
+                  "nombre",
+                  "apellido"
+                ]
+              },
+              {
+                "cells": [
+                  "emma.wong@reqres.in",
+                  "Emma",
+                  "Wong"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@todoslosservicios"
+          },
+          {
+            "name": "@metodoget"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2022-07-25T00:33:53.987Z",
+        "line": 20,
+        "name": "Usuario no registrado",
+        "description": "",
+        "id": "pruebas-al-servicio-usuarios;usuario-no-registrado",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 475996400,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "listar usuario con id \"50\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"50\"",
+                  "offset": 22
+                }
+              ],
+              "location": "definitions.ServicioUsuarioDefinition.listarUsuarioConId(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "validar codigo de respuesta \"404\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"404\"",
+                  "offset": 28
+                }
+              ],
+              "location": "definitions.ServicioUsuarioDefinition.validarCodigoDeRespuesta(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@todoslosservicios"
+          },
+          {
+            "name": "@metodoget"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2022-07-25T00:33:54.466Z",
+        "line": 25,
+        "name": "Crear usuario",
+        "description": "",
+        "id": "pruebas-al-servicio-usuarios;crear-usuario",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "que no existe usuario registrado",
+            "match": {
+              "location": "definitions.ServicioUsuarioDefinition.queNoExisteUsuarioRegistrado()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 863277600,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "registrar datos del usuario",
+            "match": {
+              "location": "definitions.ServicioUsuarioDefinition.registrarDatosDelUsuario(io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "nombre",
+                  "puesto",
+                  "codigo"
+                ]
+              },
+              {
+                "cells": [
+                  "Geanmarcos",
+                  "QA",
+                  "201"
+                ]
+              },
+              {
+                "cells": [
+                  "Antonio",
+                  "QA",
+                  "201"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "validar codigo de respuesta \"201\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"201\"",
+                  "offset": 28
+                }
+              ],
+              "location": "definitions.ServicioUsuarioDefinition.validarCodigoDeRespuesta(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "mostrar los datos del registro",
+            "match": {
+              "location": "definitions.ServicioUsuarioDefinition.mostrarLosDatosDelRegistro()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@todoslosservicios"
+          },
+          {
+            "name": "@metodopost"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2022-07-25T00:33:55.335Z",
+        "line": 35,
+        "name": "Actualizar usuario",
+        "description": "",
+        "id": "pruebas-al-servicio-usuarios;actualizar-usuario",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 36,
+            "name": "que el usuario este registrado",
+            "match": {
+              "location": "definitions.ServicioUsuarioDefinition.queElUsuarioEsteRegistrado()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 553015400,
+              "status": "passed"
+            },
+            "line": 37,
+            "name": "actualizar datos del usuario",
+            "match": {
+              "location": "definitions.ServicioUsuarioDefinition.actualizarDatosDelUsuario(io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "id",
+                  "nombre",
+                  "puesto",
+                  "codigo"
+                ]
+              },
+              {
+                "cells": [
+                  "3",
+                  "Geanmarcos",
+                  "QA",
+                  "200"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 40,
+            "name": "validar codigo de respuesta \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"200\"",
+                  "offset": 28
+                }
+              ],
+              "location": "definitions.ServicioUsuarioDefinition.validarCodigoDeRespuesta(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 41,
+            "name": "mostrar los datos del registro",
+            "match": {
+              "location": "definitions.ServicioUsuarioDefinition.mostrarLosDatosDelRegistro()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@todoslosservicios"
+          },
+          {
+            "name": "@metodoput"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2022-07-25T00:33:55.892Z",
+        "line": 44,
+        "name": "Actualizar usuario con patch",
+        "description": "",
+        "id": "pruebas-al-servicio-usuarios;actualizar-usuario-con-patch",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 45,
+            "name": "que el usuario este registrado",
+            "match": {
+              "location": "definitions.ServicioUsuarioDefinition.queElUsuarioEsteRegistrado()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 420988200,
+              "status": "passed"
+            },
+            "line": 46,
+            "name": "actualizar datos del usuario Vdos",
+            "match": {
+              "location": "definitions.ServicioUsuarioDefinition.actualizarDatosDelUsuarioVdos(io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "id",
+                  "nombre",
+                  "puesto",
+                  "codigo"
+                ]
+              },
+              {
+                "cells": [
+                  "4",
+                  "Antonio",
+                  "QA",
+                  "200"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 49,
+            "name": "validar codigo de respuesta \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"200\"",
+                  "offset": 28
+                }
+              ],
+              "location": "definitions.ServicioUsuarioDefinition.validarCodigoDeRespuesta(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000600,
+              "status": "passed"
+            },
+            "line": 50,
+            "name": "mostrar los datos del registro",
+            "match": {
+              "location": "definitions.ServicioUsuarioDefinition.mostrarLosDatosDelRegistro()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@todoslosservicios"
+          },
+          {
+            "name": "@metodopatch"
+          }
+        ]
+      }
+    ],
+    "name": "Pruebas al servicio usuarios",
+    "description": "",
+    "id": "pruebas-al-servicio-usuarios",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/ServicioUsuarios.feature",
+    "tags": [
+      {
+        "name": "@todoslosservicios",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]
